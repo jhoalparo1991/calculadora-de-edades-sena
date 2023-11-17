@@ -1,5 +1,6 @@
 // Variables
 let btnCalcular = document.querySelector("#calcular");
+let seccionResultados = document.querySelector("#resultados");
 let alerta = document.querySelector("#alert");
 let age01 = document.querySelector("#age01");
 let age02 = document.querySelector("#age02");
@@ -11,8 +12,6 @@ let age07 = document.querySelector("#age07");
 let age08 = document.querySelector("#age08");
 let age09 = document.querySelector("#age09");
 let age10 = document.querySelector("#age10");
-
-let seccionResultados = document.querySelector("#resultados");
 
 // Validaciones
 age01.addEventListener("change", (e) => {
@@ -141,12 +140,6 @@ function analisarDatos(data = []) {
     edadMasAlta,
     promedioEdad,
   ]);
-  console.log("menores ", menoresEdad);
-  console.log("mayores ", mayoresEdad);
-  console.log("adultos ", adultoMayor);
-  console.log("menor edad ", edadMasBaja);
-  console.log("mayor edad ", edadMasAlta);
-  console.log("promedio ", promedioEdad);
 }
 
 function calcularPromedio(arr) {
