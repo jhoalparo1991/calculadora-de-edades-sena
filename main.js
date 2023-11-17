@@ -1,3 +1,4 @@
+// Variables
 let btnCalcular = document.querySelector("#calcular");
 let alerta = document.querySelector("#alert");
 let age01 = document.querySelector("#age01");
@@ -13,19 +14,65 @@ let age10 = document.querySelector("#age10");
 
 let seccionResultados = document.querySelector("#resultados");
 
-// let menoresEdad = document.querySelector("#menores");
-// let mayoresEdad = document.querySelector("#mayores");
-// let adultosMayores = document.querySelector("#adultos");
-// let edadBaja = document.querySelector("#menor_edad");
-// let edadAlta = document.querySelector("#mayor_edad");
-// let promedioEdades = document.querySelector("#promedio");
+// Validaciones
+age01.addEventListener("change", (e) => {
+  if (Number(e.target.value) > 120 || Number(e.target.value) < 1) {
+    e.target.value = "1";
+  }
+});
+age02.addEventListener("change", (e) => {
+  if (Number(e.target.value) > 120 || Number(e.target.value) < 1) {
+    e.target.value = "1";
+  }
+});
+age03.addEventListener("change", (e) => {
+  if (Number(e.target.value) > 120 || Number(e.target.value) < 1) {
+    e.target.value = "1";
+  }
+});
+
+age04.addEventListener("change", (e) => {
+  if (Number(e.target.value) > 120 || Number(e.target.value) < 1) {
+    e.target.value = "1";
+  }
+});
+age05.addEventListener("change", (e) => {
+  if (Number(e.target.value) > 120 || Number(e.target.value) < 1) {
+    e.target.value = "1";
+  }
+});
+age06.addEventListener("change", (e) => {
+  if (Number(e.target.value) > 120 || Number(e.target.value) < 1) {
+    e.target.value = "1";
+  }
+});
+age07.addEventListener("change", (e) => {
+  if (Number(e.target.value) > 120 || Number(e.target.value) < 1) {
+    e.target.value = "1";
+  }
+});
+age08.addEventListener("change", (e) => {
+  if (Number(e.target.value) > 120 || Number(e.target.value) < 1) {
+    e.target.value = "1";
+  }
+});
+age09.addEventListener("change", (e) => {
+  if (Number(e.target.value) > 120 || Number(e.target.value) < 1) {
+    e.target.value = "1";
+  }
+});
+age10.addEventListener("change", (e) => {
+  if (Number(e.target.value) > 120 || Number(e.target.value) < 1) {
+    e.target.value = "1";
+  }
+});
 
 mostrarResultados([0, 0, 0, 0, 0, 0]);
 
 btnCalcular.addEventListener("click", (e) => {
   e.preventDefault();
 
-  analisarDatos(
+  analisarDatos([
     age01.value,
     age02.value,
     age03.value,
@@ -35,32 +82,21 @@ btnCalcular.addEventListener("click", (e) => {
     age07.value,
     age08.value,
     age09.value,
-    age10.value
-  );
+    age10.value,
+  ]);
 });
 
-function analisarDatos(
-  age01,
-  age02,
-  age03,
-  age04,
-  age05,
-  age06,
-  age07,
-  age08,
-  age09,
-  age10
-) {
-  age01 = Number(age01);
-  age02 = Number(age02);
-  age03 = Number(age03);
-  age04 = Number(age04);
-  age05 = Number(age05);
-  age06 = Number(age06);
-  age07 = Number(age07);
-  age08 = Number(age08);
-  age09 = Number(age09);
-  age10 = Number(age10);
+function analisarDatos(data = []) {
+  age01 = Number(data[0]);
+  age02 = Number(data[1]);
+  age03 = Number(data[2]);
+  age04 = Number(data[3]);
+  age05 = Number(data[4]);
+  age06 = Number(data[5]);
+  age07 = Number(data[6]);
+  age08 = Number(data[7]);
+  age09 = Number(data[8]);
+  age10 = Number(data[9]);
 
   arrAge = [
     age01,
@@ -97,12 +133,6 @@ function analisarDatos(
 
   promedioEdad = calcularPromedio(arrAge);
 
-  //   menoresEdad.value = "Menores de edad : " + menoresEdad;
-  //   mayoresEdad.value = "Mayores de edad : " + mayoresEdad;
-  //   adultosMayores.value = "Adultos mayores : " + adultoMayor;
-  //   edadBaja.value = "La edad mas baja : " + edadMasBaja;
-  //   edadAlta.value = "La edad mas alta : " + edadMasAlta;
-  //   promedioEdades.value = "Promedio : " + promedioEdad;
   mostrarResultados([
     menoresEdad,
     mayoresEdad,
