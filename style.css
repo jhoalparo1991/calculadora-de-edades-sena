@@ -15,7 +15,15 @@
 .content{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    padding: 10px;
+    border: 2px solid indigo;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 250px;
 }
 
 .group{
@@ -50,10 +58,9 @@ input{
     margin-top: 10px;
     cursor: pointer;
     display: block;
+    width: 100%;
 }
-form{
-    height: auto;
-}
+
 
 .alert{
 
@@ -69,4 +76,19 @@ form{
 .alert-error{
     background-color: rgb(255, 150, 150);
     color: red;
+}
+
+.resultados{
+    display: flex;
+    flex-direction: column;
+    background-color: papayawhip;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 2px solid tomato;
+}
+
+.resultados p{
+    padding: 5px;
+    color: green;
 }
