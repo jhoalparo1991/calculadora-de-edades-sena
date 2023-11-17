@@ -1,4 +1,5 @@
 let btnCalcular = document.querySelector("#calcular");
+let alerta = document.querySelector("#alert");
 let age01 = document.querySelector("#age01");
 let age02 = document.querySelector("#age02");
 let age03 = document.querySelector("#age03");
@@ -10,7 +11,12 @@ let age08 = document.querySelector("#age08");
 let age09 = document.querySelector("#age09");
 let age10 = document.querySelector("#age10");
 
-
+let menoresEdad = document.querySelector("#menores")
+let mayoresEdad = document.querySelector("#mayores")
+let adultosMayores = document.querySelector("#adultos")
+let edadBaja = document.querySelector("#menor_edad")
+let edadAlta = document.querySelector("#mayor_edad")
+let promedioEdades = document.querySelector("#promedio")
 
 btnCalcular.addEventListener('click', e => {
     e.preventDefault()
@@ -36,7 +42,11 @@ function analisarDatos(age01,age02,age03,age04,age05,age06,age07,age08,age09,age
 
     for(let i = 0; i < arrAge.length; i++){
         if(arrAge[i] < 1 || arrAge[i] > 120){
-            console.log('La edad debe estar entre 1 y 120 años');
+            alerta.style.display='block'
+            alerta.innerText = 'La edad debe estar entre 1 y 120 años';
+            setTimeout(()=>{
+                alerta.style.display='none'
+            },3000)
             return;
         }
     }
@@ -51,14 +61,24 @@ function analisarDatos(age01,age02,age03,age04,age05,age06,age07,age08,age09,age
     let edadMasAlta = arrAge[arrAge.length-1]
 
 
-    console.log("menores ", menoresEdad);
-    console.log("mayores ", mayoresEdad);
-    console.log("adultos ", adultoMayor);
-    console.log("menor edad ", edadMasBaja);
-    console.log("mayor edad ", edadMasAlta);
+    
 
-    promedio = calcularPromedio(arrAge)
-    console.log('Promedio ', promedio);
+    promedioEdad = calcularPromedio(arrAge)
+
+    menoresEdad.value ="Menores de edad : " + menoresEdad
+    mayoresEdad.value = "Mayores de edad : " +mayoresEdad
+    adultosMayores.value = "Adultos mayores : " +adultoMayor
+    edadBaja.value ="La edad mas baja : " + edadMasBaja
+    edadAlta.value ="La edad mas alta : " + edadMasAlta
+    promedioEdades.value ="Promedio : " + promedioEdad
+
+    console.log("menores ", menores);
+    console.log("mayores ", mayores);
+    console.log("adultos ", adultos);
+    console.log("menor edad ", menor_edad);
+    console.log("mayor edad ", mayor_edad);
+    console.log("promedio ", promedio);
+
 
 }
 

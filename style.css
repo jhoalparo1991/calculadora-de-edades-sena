@@ -49,4 +49,24 @@ input{
     width: 100px;
     margin-top: 10px;
     cursor: pointer;
+    display: block;
+}
+form{
+    height: auto;
+}
+
+.alert{
+
+    display: none;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.alert-error{
+    background-color: rgb(255, 150, 150);
+    color: red;
 }
